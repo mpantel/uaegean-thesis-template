@@ -1,0 +1,60 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+
+\documentclass{Dissertate}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+
+% the front matter
+\input{frontmatter/personalize}
+\maketitlegreek
+\newpage
+\maketitle
+% \copyrightpage
+\frontmatter
+\setstretch{\dnormalspacing}
+\abstractpage
+\addcontentsline{toc}{chapter}{Abstract}
+\abstractpagegreek
+\addcontentsline{toc}{chapter}{\textnormal{Περίληψη}}
+\begin{spacing}{\dcompressedspacing}
+\tableofcontents
+% \authorlist
+\listoffigures
+\addcontentsline{toc}{chapter}{Listing of figures}
+\listoftables
+\addcontentsline{toc}{chapter}{Listing of tables}
+\end{spacing}
+\dedicationpage
+\acknowledgments
+
+% include each chapter...
+\mainmatter
+% Uncomment the next line to start chapter numbering at 0
+% \setcounter{chapter}{-1}
+\include{chapters/introduction}
+% \include{chapters/chapter2}
+% \include{chapters/chapter3}
+% ... add more chapters as needed
+\include{chapters/conclusion}
+
+\setstretch{\dnormalspacing}
+
+% Appendices (uncomment and add as needed)
+% \appendix
+% \include{chapters/appendixA}
+
+% the back matter
+\backmatter
+
+\clearpage
+\bibliography{references}
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{apalike2}
+
+\input{endmatter/colophon}
+
+\end{document}
